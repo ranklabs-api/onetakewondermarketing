@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://onetakewondermarketing.pages.dev/sitemap.xml
