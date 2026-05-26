@@ -1,0 +1,75 @@
+---
+---
+
+<!-- Top Bar -->
+<div class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-2 flex flex-col sm:flex-row items-center justify-between text-sm">
+    <span class="text-white/80">Over 10 years helping local businesses grow</span>
+    <a href="mailto:hello@onetakewondermarketing.com" class="hover:text-brand-pink-light transition-colors font-medium">hello@onetakewondermarketing.com</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/logo.png" alt="One Take Wonder Marketing" class="h-12 w-auto" />
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="/" class="text-sm font-medium text-gray-600 hover:text-brand-pink transition-colors">Home</a>
+      <a href="/services" class="text-sm font-medium text-gray-600 hover:text-brand-pink transition-colors">Services</a>
+      <a href="/about" class="text-sm font-medium text-gray-600 hover:text-brand-pink transition-colors">About</a>
+      <a href="/results" class="text-sm font-medium text-gray-600 hover:text-brand-pink transition-colors">Results</a>
+      <a href="/contact" class="text-sm font-medium text-gray-600 hover:text-brand-pink transition-colors">Contact</a>
+      <a href="/contact" class="btn-primary text-sm !py-2.5 !px-6">Get a Free Proposal</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="menu-btn" class="md:hidden text-gray-900 p-2 z-10 relative" aria-label="Toggle menu">
+      <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-100">
+    <div class="px-6 py-4 space-y-3">
+      <a href="/" class="block text-base text-gray-700 font-medium py-2">Home</a>
+      <a href="/services" class="block text-base text-gray-700 font-medium py-2">Services</a>
+      <a href="/about" class="block text-base text-gray-700 font-medium py-2">About</a>
+      <a href="/results" class="block text-base text-gray-700 font-medium py-2">Results</a>
+      <a href="/contact" class="block text-base text-gray-700 font-medium py-2">Contact</a>
+      <a href="/contact" class="btn-primary block text-center w-full">Get a Free Proposal</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    if (isOpen) {
+      menu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    } else {
+      menu.classList.remove('hidden');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    }
+  });
+
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+</script>

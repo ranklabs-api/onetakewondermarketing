@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact Us | One Take Wonder Marketing"
+  description="Get a free, no-obligation marketing proposal from One Take Wonder Marketing. Full-service marketing agency with over 10 years of proven ROI for local businesses."
+>
+
+<!-- Page Hero -->
+<section class="bg-gray-900 py-20 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-brand-pink-light font-semibold uppercase tracking-widest text-sm mb-4">Let's Talk</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Ready to <span class="bg-gradient-to-r from-brand-pink-light to-brand-pink bg-clip-text text-transparent">Grow Your Business?</span></h1>
+    <p class="text-gray-300 text-lg">
+      Tell us about your goals and we'll put together a free, customized proposal. No pressure, no obligation — just a clear plan for what marketing that proves ROI can do for your business.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Form & Info -->
+<section class="py-20 px-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+      <!-- Form -->
+      <div class="lg:col-span-3">
+        <h2 class="text-2xl font-extrabold text-gray-900 mb-8">Get Your Free Proposal</h2>
+        <form class="space-y-6" action="https://formspree.io/f/your-form-id" method="POST">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-brand-pink outline-none transition" placeholder="Your name" />
+            </div>
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company *</label>
+              <input type="text" id="company" name="company" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-brand-pink outline-none transition" placeholder="Your business name" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-brand-pink outline-none transition" placeholder="you@company.com" />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+              <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-brand-pink outline-none transition" placeholder="(555) 123-4567" />
+            </div>
+          </div>
+
+          <div>
+            <label for="interest" class="block text-sm font-medium text-gray-700 mb-2">I'm Interested In *</label>
+            <select id="interest" name="interest" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-brand-pink outline-none transition bg-white">
+              <option value="">Select an option...</option>
+              <option value="full-service">Full Service Marketing</option>
+              <option value="tv-ott">TV & OTT Advertising</option>
+              <option value="digital">Digital Marketing (SEO, PPC, Social)</option>
+              <option value="creative-web">Creative & Web Design</option>
+              <option value="campaign">Single Campaign / Project</option>
+              <option value="not-sure">Not Sure — Need Guidance</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Tell Us About Your Goals</label>
+            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-brand-pink outline-none transition" placeholder="What are you looking to achieve? What's your timeline? Any budget range in mind?"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary w-full text-center !py-4">Send My Free Proposal Request</button>
+          <p class="text-xs text-gray-400 text-center">We'll respond within 1 business day. No spam, no pressure.</p>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="lg:col-span-2">
+        <div class="bg-gray-50 rounded-2xl p-8 sticky top-28">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Other Ways to Reach Us</h3>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-brand-pink/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-900">Email</p>
+                <a href="mailto:hello@onetakewondermarketing.com" class="text-brand-pink hover:text-brand-pink-dark transition-colors">hello@onetakewondermarketing.com</a>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-200 pt-6">
+              <h4 class="font-semibold text-gray-900 mb-3">What to Expect</h4>
+              <ul class="space-y-3 text-sm text-gray-500">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-brand-pink flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>We'll respond within 1 business day</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-brand-pink flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Free 30-minute discovery call to understand your needs</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-brand-pink flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Custom proposal tailored to your budget and goals</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-brand-pink flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>No obligation, no pressure — just a clear plan</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="border-t border-gray-200 pt-6">
+              <h4 class="font-semibold text-gray-900 mb-2">Based in the United States</h4>
+              <p class="text-sm text-gray-500">Serving local businesses nationwide with customized marketing strategies that prove ROI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>

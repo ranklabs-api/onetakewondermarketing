@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-brand-pink text-white font-semibold px-8 py-3.5 rounded-lg 
+           hover:bg-brand-pink-dark transition-all duration-200 shadow-lg shadow-brand-pink/25;
+  }
+  .btn-secondary {
+    @apply inline-block border-2 border-gray-900 text-gray-900 font-semibold px-8 py-3.5 rounded-lg
+           hover:bg-gray-900 hover:text-white transition-all duration-200;
+  }
+  .btn-outline-light {
+    @apply inline-block border-2 border-white/40 text-white font-semibold px-8 py-3.5 rounded-lg
+           hover:bg-white hover:text-gray-900 transition-all duration-200;
+  }
+  .section-label {
+    @apply text-brand-pink font-semibold uppercase tracking-widest text-sm mb-3;
+  }
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-pink to-brand-pink-mid bg-clip-text text-transparent;
+  }
+}
