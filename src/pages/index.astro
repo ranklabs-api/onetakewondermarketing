@@ -9,46 +9,25 @@ import Layout from '../layouts/Layout.astro';
 
 <!-- HERO -->
 <section class="relative bg-gray-900 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-brand-pink-dark/20"></div>
-  <div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
-    <div class="absolute top-20 right-20 w-96 h-96 bg-brand-pink rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-40 w-64 h-64 bg-brand-pink-mid rounded-full blur-3xl"></div>
+  <!-- Background photo -->
+  <div class="absolute inset-0">
+    <img src="/hero-banner.jpg" alt="Marketing team collaborating" class="w-full h-full object-cover" />
   </div>
+  <!-- Dark overlay for text readability -->
+  <div class="absolute inset-0 bg-gray-900/80"></div>
+  <!-- Subtle pink accent overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-pink-dark/20 via-transparent to-transparent"></div>
   <div class="relative max-w-7xl mx-auto px-6 py-24 md:py-36">
     <div class="max-w-3xl">
       <p class="text-brand-pink-light font-semibold uppercase tracking-widest text-sm mb-4">Full-Service Marketing Agency</p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
         Marketing That <span class="bg-gradient-to-r from-brand-pink-light to-brand-pink bg-clip-text text-transparent">Proves Its Worth</span> — Every Time
       </h1>
-      <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl">
+      <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-2xl">
         We don't just execute campaigns. We build customized marketing strategies that fit your budget and deliver measurable ROI — because your marketing should work as hard as you do.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="/contact" class="btn-primary text-center text-lg !px-10 !py-4">Schedule Your First Consultation</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST BAR -->
-<section class="bg-white border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-6 py-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div>
-        <div class="text-3xl md:text-4xl font-extrabold text-brand-pink">10+</div>
-        <div class="text-sm text-gray-500 mt-1">Years in Business</div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-extrabold text-brand-pink">Full</div>
-        <div class="text-sm text-gray-500 mt-1">Service Team</div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-extrabold text-brand-pink">Proven</div>
-        <div class="text-sm text-gray-500 mt-1">ROI Delivery</div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-extrabold text-brand-pink">100%</div>
-        <div class="text-sm text-gray-500 mt-1">Custom Strategies</div>
       </div>
     </div>
   </div>
