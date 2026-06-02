@@ -1,0 +1,16 @@
+{
+  "customer_id": "onetakewondermarketing",
+  "business_name": "One Take Wonder Marketing",
+  "site_url": "https://onetakewonderproductions.com",
+  "contact_name": "Pearl",
+  "contact_email": "pearl@onetakewonderproductions.com",
+  "plan": "internal",
+  "plan_features": [
+    "seo_audit"
+  ],
+  "cf_project": "onetakewondermarketing",
+  "github_repo": "ranklabs-api/onetakewondermarketing",
+  "type": "astro",
+  "provisioning_state": "live",
+  "ga4_property_id": "properties/539489882"
+}
