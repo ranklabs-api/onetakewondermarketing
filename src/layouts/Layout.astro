@@ -5,8 +5,13 @@ import '../styles/global.css';
 
 const {
   title = 'One Take Wonder Marketing | Full-Service Marketing Agency',
-  description = 'One Take Wonder Marketing is a full-service marketing agency with over 10 years of experience helping local businesses grow with customized strategies based on their budget. Proven ROI. TV, OTT, digital, web design, and more.'
+  description = 'Full-service marketing agency with 10+ years of experience. Custom strategies built around your budget with proven ROI. TV, digital, creative, web design.',
+  canonical = '',
+  ogImage = '/MarketingBanner.jpg',
 } = Astro.props;
+
+const siteUrl = 'https://onetakewondermarketing.com';
+const currentUrl = canonical ? `${siteUrl}/${canonical.replace(/^\//, '')}` : siteUrl;
 ---
 
 <!doctype html>
@@ -14,8 +19,47 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={currentUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="One Take Wonder Marketing" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "One Take Wonder Marketing",
+      "description": "Full-service marketing agency with over 10 years of experience helping local businesses grow with customized strategies based on their budget.",
+      "url": siteUrl,
+      "telephone": "+14076889868",
+      "email": "hello@onetakewondermarketing.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Orlando",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "image": `${siteUrl}/MarketingBanner.jpg`,
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.instagram.com/onetakewondermarketing/",
+        "https://www.facebook.com/onetakewondermarketing"
+      ]
+    })} />
+
     <!-- SEO by Rank Labs -->
     <link rel="icon" type="image/png" href="/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
