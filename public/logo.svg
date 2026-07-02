@@ -1,0 +1,13 @@
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="m1">
+      <rect x="0" y="8" width="156" height="90" rx="10" fill="#fff"/>
+      <text x="78" y="72" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="64" letter-spacing="-0.02em" fill="#000">ONE</text>
+    </mask>
+  </defs>
+  <rect x="0" y="8" width="156" height="90" rx="10" fill="#ec4899" mask="url(#m1)"/>
+  <text x="182" y="72" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="64" letter-spacing="-0.02em" fill="#18181b">TAKE</text>
+  <text x="0" y="158" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="82" letter-spacing="-0.03em" fill="#18181b">WONDER</text>
+  <rect x="0" y="178" width="390" height="6" rx="3" fill="#ec4899"/>
+  <text x="2" y="182" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="20" letter-spacing="0.34em" fill="#52525b">MARKETING</text>
+</svg>

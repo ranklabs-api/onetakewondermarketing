@@ -17,6 +17,23 @@ export async function onRequestPost(context) {
 
     if (!name || !email) return json({ error: "Name and email are required" }, 400);
 
+    // Cloudflare Turnstile verification
+    const turnstileToken = d['cf-turnstile-response'] || form.get('cf-turnstile-response');
+    const turnstileSecret = context.env.TURNSTILE_SECRET_KEY;
+    if (!turnstileToken) return json({ error: "Security check required. Please enable JavaScript and try again." }, 400);
+    if (turnstileSecret) {
+      const verify = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ secret: turnstileSecret, response: turnstileToken }),
+      });
+      const result = await verify.json();
+      if (!result.success) {
+        console.error("Turnstile verification failed:", JSON.stringify(result));
+        return json({ error: "Security check failed. Please refresh and try again." }, 400);
+      }
+    }
+
     const submittedAt = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
     const resendKey = context.env.RESEND_API_KEY;
     if (!resendKey) return json({ error: "Email not configured" }, 503);
