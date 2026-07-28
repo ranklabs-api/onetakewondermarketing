@@ -21,7 +21,8 @@ const currentUrl = canonical ? `${siteUrl}/${canonical.replace(/^\//, '')}` : si
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={currentUrl} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
