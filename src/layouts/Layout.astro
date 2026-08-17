@@ -66,6 +66,7 @@ const currentUrl = canonical ? `${siteUrl}/${canonical.replace(/^\//, '')}` : si
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <meta name="google-site-verification" content="Nlw5vCiMRDgyXKCN43_qwUzvbuTNb1qXNWdJsbl8kOs" />
+    <slot name="head" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LT31Z70DB2"></script>
     <script>
