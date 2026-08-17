@@ -1,85 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const posts = [
-  {
-    "slug": "marketing-strategy-that-proves-its-worth",
-    "date": "August 17, 2026",
-    "title": "Marketing Strategy That Makes Every Dollar Prove Its Worth",
-    "tag": "Strategy Insights",
-    "excerpt": "Build a marketing strategy around your audience, budget, channels, and measurable ROAS before spending a dollar on paid media."
-  },
-  {
-    "slug": "strategy",
-    "date": "August 17, 2026",
-    "title": "Top Questions About Strategy — Answered",
-    "tag": "Strategy Insights",
-    "excerpt": "What marketing strategy really means, why it matters, and how to build a practical plan that makes every dollar count."
-  },
-  {
-    "slug": "professional-media-buying-roi-diy-advertising",
-    "date": "July 28, 2026",
-    "title": "Why Professional Media Buying Delivers 3x the ROI of DIY Advertising",
-    "tag": "Media Buying",
-    "excerpt": "Why expert media buying, smarter targeting, and continuous optimization deliver stronger returns than DIY advertising."
-  },
-  {
-    "slug": "strategy-what-every-business-owner-should-know",
-    "date": "July 21, 2026",
-    "title": "Strategy: What Every Business Owner Should Know",
-    "tag": "Strategy Insights",
-    "excerpt": "A practical guide to reaching the right people, choosing the right message and channels, and measuring what matters."
-  },
-  {
-    "slug": "marketing-strategy-guide",
-    "date": "July 14, 2026",
-    "title": "The One Take Wonder Marketing Guide to Strategy: Why Strategy Comes Before Spending",
-    "tag": "Strategy Insights",
-    "excerpt": "Why audience, objectives, measurement, and review cycles must come before choosing platforms or allocating spend."
-  },
-  {
-    "slug": "ads-getting-clicks-no-customers-paid-media-conversion",
-    "date": "June 15, 2026",
-    "title": "Your Ads Are Getting Clicks. Here's Why They're Not Getting Customers.",
-    "tag": "Paid Media Strategy",
-    "excerpt": "Five common reasons paid media earns clicks without customers—and the practical fixes that turn traffic into revenue."
-  },
-  {
-    "slug": "full-service-marketing-strategy",
-    "date": "May 20, 2026",
-    "title": "Why Every Local Business Needs a Full-Service Marketing Strategy",
-    "tag": "Marketing Strategy",
-    "excerpt": "Why coordinated TV, digital, search, social, print, and creative outperform isolated single-channel tactics."
-  },
-  {
-    "slug": "tv-advertising-vs-digital-ads",
-    "date": "May 12, 2026",
-    "title": "TV Advertising vs. Digital Ads: Which Is Right for Your Business?",
-    "tag": "Media Strategy",
-    "excerpt": "Where television and digital advertising each excel—and why the strongest customer journeys often use both."
-  },
-  {
-    "slug": "marketing-on-a-budget",
-    "date": "May 5, 2026",
-    "title": "Marketing on a Budget: How Small Businesses Can Compete With Big Brands",
-    "tag": "Small Business Marketing",
-    "excerpt": "How smaller businesses can focus their channels, use existing assets, and make every paid-media dollar work harder."
-  },
-  {
-    "slug": "brand-consistency-across-every-channel",
-    "date": "April 28, 2026",
-    "title": "The Power of Brand Consistency Across Every Channel",
-    "tag": "Brand Strategy",
-    "excerpt": "How consistent visuals, voice, messaging, and customer experience compound trust across every brand touchpoint."
-  },
-  {
-    "slug": "measure-marketing-roi",
-    "date": "April 20, 2026",
-    "title": "How to Measure Marketing ROI (and Why Most Businesses Get It Wrong)",
-    "tag": "Analytics & Reporting",
-    "excerpt": "How to define meaningful returns, count the true investment, connect spend to results, and calculate marketing ROI."
-  }
-];
 ---
 
 <Layout
@@ -97,7 +17,87 @@ const posts = [
 
   <section class="py-20 px-6 bg-white">
     <div class="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
-      {posts.map((post) => (
+      {[
+
+        {
+          slug: 'marketing-strategy-that-proves-its-worth',
+          date: 'August 17, 2026',
+          title: 'Marketing Strategy That Makes Every Dollar Prove Its Worth',
+          excerpt: 'Build a marketing strategy around your audience, budget, channels, and measurable ROAS before spending a dollar on paid media.',
+          tag: 'Strategy Insights',
+        },
+        {
+          slug: 'strategy',
+          date: 'August 17, 2026',
+          title: 'Top Questions About Strategy — Answered',
+          excerpt: 'What marketing strategy really means, why it matters, and how to build a practical plan that makes every dollar count.',
+          tag: 'Strategy Insights',
+        },
+        {
+          slug: 'professional-media-buying-roi-diy-advertising',
+          date: 'July 28, 2026',
+          title: 'Why Professional Media Buying Delivers 3x the ROI of DIY Advertising',
+          excerpt: 'Why expert media buying, smarter targeting, and continuous optimization deliver stronger returns than DIY advertising.',
+          tag: 'Media Buying',
+        },
+        {
+          slug: 'strategy-what-every-business-owner-should-know',
+          date: 'July 21, 2026',
+          title: 'Strategy: What Every Business Owner Should Know',
+          excerpt: 'A practical guide to reaching the right people, choosing the right message and channels, and measuring what matters.',
+          tag: 'Strategy Insights',
+        },
+        {
+          slug: 'marketing-strategy-guide',
+          date: 'July 14, 2026',
+          title: 'The One Take Wonder Marketing Guide to Strategy: Why Strategy Comes Before Spending',
+          excerpt: 'Why audience, objectives, measurement, and review cycles must come before choosing platforms or allocating spend.',
+          tag: 'Strategy Insights',
+        },
+        {
+          slug: 'ads-getting-clicks-no-customers-paid-media-conversion',
+          date: 'June 15, 2026',
+          title: 'Your Ads Are Getting Clicks. Here\'s Why They\'re Not Getting Customers.',
+          excerpt: 'Five common reasons paid media earns clicks without customers—and the practical fixes that turn traffic into revenue.',
+          tag: 'Paid Media Strategy',
+        },
+        {
+          slug: 'full-service-marketing-strategy',
+          date: 'May 20, 2026',
+          title: 'Why Every Local Business Needs a Full-Service Marketing Strategy',
+          excerpt: 'Why coordinated TV, digital, search, social, print, and creative outperform isolated single-channel tactics.',
+          tag: 'Marketing Strategy',
+        },
+        {
+          slug: 'tv-advertising-vs-digital-ads',
+          date: 'May 12, 2026',
+          title: 'TV Advertising vs. Digital Ads: Which Is Right for Your Business?',
+          excerpt: 'Where television and digital advertising each excel—and why the strongest customer journeys often use both.',
+          tag: 'Media Strategy',
+        },
+        {
+          slug: 'marketing-on-a-budget',
+          date: 'May 5, 2026',
+          title: 'Marketing on a Budget: How Small Businesses Can Compete With Big Brands',
+          excerpt: 'How smaller businesses can focus their channels, use existing assets, and make every paid-media dollar work harder.',
+          tag: 'Small Business Marketing',
+        },
+        {
+          slug: 'brand-consistency-across-every-channel',
+          date: 'April 28, 2026',
+          title: 'The Power of Brand Consistency Across Every Channel',
+          excerpt: 'How consistent visuals, voice, messaging, and customer experience compound trust across every brand touchpoint.',
+          tag: 'Brand Strategy',
+        },
+        {
+          slug: 'measure-marketing-roi',
+          date: 'April 20, 2026',
+          title: 'How to Measure Marketing ROI (and Why Most Businesses Get It Wrong)',
+          excerpt: 'How to define meaningful returns, count the true investment, connect spend to results, and calculate marketing ROI.',
+          tag: 'Analytics & Reporting',
+        },
+
+      ].map((post) => (
         <a href={`/blog/${post.slug}`} class="group block rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-brand-pink/30 hover:shadow-xl">
           <div class="flex flex-wrap items-center gap-3 mb-4">
             <span class="text-brand-pink text-xs font-bold uppercase tracking-wider">{post.tag}</span>
