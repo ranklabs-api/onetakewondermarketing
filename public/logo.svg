@@ -1,13 +1,7 @@
-<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <mask id="m1">
-      <rect x="0" y="8" width="156" height="90" rx="10" fill="#fff"/>
-      <text x="78" y="72" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="64" letter-spacing="-0.02em" fill="#000">ONE</text>
-    </mask>
-  </defs>
-  <rect x="0" y="8" width="156" height="90" rx="10" fill="#ec4899" mask="url(#m1)"/>
-  <text x="182" y="72" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="64" letter-spacing="-0.02em" fill="#18181b">TAKE</text>
-  <text x="0" y="158" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="82" letter-spacing="-0.03em" fill="#18181b">WONDER</text>
-  <rect x="0" y="178" width="390" height="6" rx="3" fill="#ec4899"/>
-  <text x="2" y="182" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="20" letter-spacing="0.34em" fill="#52525b">MARKETING</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1008" viewBox="-8 0 500 252">
+  <rect x="-8" y="0" width="500" height="252" fill="#ffffff"/>
+  <text x="0" y="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="-3" fill="#18181b">ONE TAKE</text>
+  <text x="0" y="168" font-family="Helvetica Neue, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="-3" fill="#18181b">WONDER</text>
+  <path d="M 0 194 L 466 194 L 466 20" fill="none" stroke="#ec4899" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="2" y="234" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6.6" fill="#8b8b93">MARKETING</text>
 </svg>
