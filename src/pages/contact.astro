@@ -109,6 +109,15 @@ const TURNSTILE_SITE_KEY = '0x4AAAAAADulaF08xHlZHPYf';
                 if (window.turnstile) turnstile.reset();
                 throw new Error((await res.json().catch(() => ({}))).error || 'Something went wrong');
               }
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'generate_lead', {
+                  customer_id: 'bg_113610_002aea',
+                  form_id: 'contact',
+                  form_type: 'consultation',
+                  page_path: window.location.pathname,
+                  event_version: 1,
+                });
+              }
               f.classList.add('hidden'); ok.classList.remove('hidden');
               ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
             } catch (e2) {
@@ -125,6 +134,16 @@ const TURNSTILE_SITE_KEY = '0x4AAAAAADulaF08xHlZHPYf';
           <h3 class="text-xl font-bold text-gray-900 mb-6">Other Ways to Reach Us</h3>
 
           <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-brand-pink/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.684l1.5 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.5a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-900 mb-2">Phone</p>
+                <a href="tel:+13214838762" data-call-location="contact" class="btn-primary text-sm !px-5 !py-2.5">Call (321) 483-8762</a>
+              </div>
+            </div>
+
             <div class="flex items-start gap-4">
               <div class="w-10 h-10 bg-brand-pink/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <svg class="w-5 h-5 text-brand-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
