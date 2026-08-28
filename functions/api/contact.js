@@ -79,6 +79,19 @@ export async function onRequestPost(context) {
       }).catch(() => {}));
     }
 
+    // Server-side performance event (non-PII) — fire-and-forget.
+    if (context.env.PERFORMANCE_DB && typeof context.waitUntil === "function") {
+      const receivedAt = new Date().toISOString();
+      context.waitUntil(context.env.PERFORMANCE_DB.prepare(
+        `INSERT INTO performance_events
+           (id, customer_id, event_name, occurred_at, received_at, form_id, form_type, page_path, event_version)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
+      ).bind(
+        crypto.randomUUID(), "bg_113610_002aea", "generate_lead", receivedAt, receivedAt,
+        "contact", "contact", "/contact", 1,
+      ).run().catch((error) => { console.error("Performance event logging failed:", error.message); }));
+    }
+
     return json({ ok: true });
   } catch (e) {
     return json({ error: e.message }, 500);
