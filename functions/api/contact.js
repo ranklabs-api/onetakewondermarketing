@@ -1,3 +1,4 @@
+import { readAttribution, ATTRIBUTION_COLUMNS } from "./_shared/attribution.js";
 // One Take Wonder — Contact Form Handler (Cloudflare Pages Function)
 // Replaces the dead placeholder Formspree action. Emails submissions to the
 // business contact via Resend (sender domain getranklabs.com is verified).
@@ -72,6 +73,9 @@ export async function onRequestPost(context) {
     const tg = context.env.TELEGRAM_BOT_TOKEN;
     if (tg) {
       const chatId = context.env.TELEGRAM_CHAT_ID || "5016070713";
+      // First-touch attribution captured by the page (see Layout.astro). Works
+      // for visitors GA4 never sees because a blocker stopped its script.
+      const _attr = readAttribution(form);
       context.waitUntil(fetch(`https://api.telegram.org/bot${tg}/sendMessage`, {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chat_id: chatId, parse_mode: "HTML", disable_web_page_preview: true,
@@ -84,11 +88,14 @@ export async function onRequestPost(context) {
       const receivedAt = new Date().toISOString();
       context.waitUntil(context.env.PERFORMANCE_DB.prepare(
         `INSERT INTO performance_events
-           (id, customer_id, event_name, occurred_at, received_at, form_id, form_type, page_path, event_version)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
+           (id, customer_id, event_name, occurred_at, received_at, form_id, form_type, page_path, event_version,
+            referrer_url, referrer_host, landing_page, utm_source, utm_medium, utm_campaign, gclid,
+            ga_client_id, attributed_channel)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
       ).bind(
         crypto.randomUUID(), "bg_113610_002aea", "generate_lead", receivedAt, receivedAt,
         "contact", "contact", "/contact", 1,
+        ...ATTRIBUTION_COLUMNS.map((c) => _attr[c]),
       ).run().catch((error) => { console.error("Performance event logging failed:", error.message); }));
     }
 

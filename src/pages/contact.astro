@@ -103,6 +103,17 @@ const TURNSTILE_SITE_KEY = '0x4AAAAAADulaF08xHlZHPYf';
               const formData = new FormData(f);
               if (turnstileToken) formData.append('cf-turnstile-response', turnstileToken);
               
+        // Attach first-touch attribution stashed by Layout.astro. Pure DOM, so it
+        // survives an analytics blocker — the case that made a real lead
+        // unattributable on 2026-09-03.
+        try {
+          const _attr = JSON.parse(sessionStorage.getItem('rl_attr') || '{}');
+          for (const k of ['referrer','referrer_host','landing_page','utm_source','utm_medium','utm_campaign','gclid']) {
+            if (_attr[k]) formData.append('attr_' + k, _attr[k]);
+          }
+          const _ga = document.cookie.match(/(?:^|;\s*)_ga=GA\d\.\d\.(\d+\.\d+)/);
+          if (_ga) formData.append('attr_ga_client_id', _ga[1]);
+        } catch (e) { /* attribution is best-effort; never block the submission */ }
               const res = await fetch('/api/contact', { method: 'POST', body: formData });
               if (!res.ok) {
                 // Reset Turnstile on failure
