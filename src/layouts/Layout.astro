@@ -41,24 +41,67 @@ const currentUrl = canonical ? `${siteUrl}/${canonical.replace(/^\//, '')}` : si
     <!-- JSON-LD Schema -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": `${siteUrl}/#organization`,
       "name": "One Take Wonder Marketing",
-      "description": "Full-service marketing agency with over 10 years of experience helping local businesses grow with customized strategies based on their budget.",
       "url": siteUrl,
+      "logo": `${siteUrl}/logo.png`,
+      "image": `${siteUrl}/MarketingBanner.jpg`,
+      "description": "Full-service marketing agency with over 10 years of experience helping local businesses grow with customized strategies based on their budget.",
       "telephone": "+13214838762",
       "email": "pearl@onetakewonderproductions.com",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "11454 Chateaubriand Ave",
         "addressLocality": "Orlando",
         "addressRegion": "FL",
+        "postalCode": "32836",
         "addressCountry": "US"
       },
-      "image": `${siteUrl}/MarketingBanner.jpg`,
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.4308339,
+        "longitude": -81.5555657
+      },
+      "areaServed": { "@type": "Country", "name": "United States" },
       "priceRange": "$$",
+      "paymentAccepted": "Credit Card",
       "sameAs": [
         "https://www.instagram.com/onetakewondermarketing/",
         "https://www.facebook.com/onetakewondermarketing"
-      ]
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+13214838762",
+        "email": "pearl@onetakewonderproductions.com",
+        "availableLanguage": "en"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Marketing Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Media Buying", "description": "Strategic ad placement across TV, streaming, and digital." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "TV & Streaming Advertising", "description": "Connected TV and OTT campaigns." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PPC & Paid Search", "description": "High-intent paid search campaigns." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Advertising", "description": "Paid social across Meta, TikTok, and more." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & SEM", "description": "Search engine optimization and marketing." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Design & Development", "description": "Conversion-focused website design." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Creative & Content", "description": "Brand creative and content." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Strategy", "description": "Positioning, messaging, and go-to-market strategy." } }
+        ]
+      },
+      "potentialAction": {
+        "@type": "ContactAction",
+        "name": "Contact One Take Wonder Marketing",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${siteUrl}/contact`,
+          "actionPlatform": "https://schema.org/DesktopWebPlatform",
+          "httpMethod": "GET",
+          "contentType": "text/html"
+        }
+      }
     })} />
 
     <link rel="icon" type="image/png" href="/logo.png" />
