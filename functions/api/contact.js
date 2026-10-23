@@ -69,23 +69,12 @@ export async function onRequestPost(context) {
       return json({ error: "Could not send right now — please email pearl@onetakewonderproductions.com" }, 502);
     }
 
-    // optional Telegram (skipped silently if not configured)
-    const tg = context.env.TELEGRAM_BOT_TOKEN;
-    if (tg) {
-      const chatId = context.env.TELEGRAM_CHAT_ID || "5016070713";
-      // First-touch attribution captured by the page (see Layout.astro). Works
-      // for visitors GA4 never sees because a blocker stopped its script.
-      const _attr = readAttribution(form);
-      context.waitUntil(fetch(`https://api.telegram.org/bot${tg}/sendMessage`, {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chatId, parse_mode: "HTML", disable_web_page_preview: true,
-          text: `<b>🎬 New Consultation Request</b>\n<b>Name:</b> ${name}\n<b>Company:</b> ${company || "N/A"}\n<b>Email:</b> ${email}\n<b>Phone:</b> ${phone || "N/A"}\n<b>Interest:</b> ${interest || "N/A"}` }),
-      }).catch(() => {}));
-    }
-
     // Server-side performance event (non-PII) — fire-and-forget.
     if (context.env.PERFORMANCE_DB && typeof context.waitUntil === "function") {
       const receivedAt = new Date().toISOString();
+      // First-touch attribution captured by the page (see Layout.astro). Works
+      // for visitors GA4 never sees because a blocker stopped its script.
+      const _attr = readAttribution(form);
       context.waitUntil(context.env.PERFORMANCE_DB.prepare(
         `INSERT INTO performance_events
            (id, customer_id, event_name, occurred_at, received_at, form_id, form_type, page_path, event_version,
