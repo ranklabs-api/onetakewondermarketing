@@ -5,7 +5,7 @@ import '../styles/global.css';
 
 const {
   title = 'One Take Wonder Marketing | Full-Service Marketing Agency',
-  description = 'Full-service marketing agency with 10+ years of experience. Custom strategies built around your budget with proven ROI. TV, digital, creative, web design.',
+  description = 'One Take Wonder Marketing is a full-service marketing and media-buying agency in Orlando, FL, serving local businesses across the United States.',
   canonical = '',
   ogImage = '/MarketingBanner.jpg',
 } = Astro.props;
@@ -42,12 +42,13 @@ const currentUrl = canonical ? `${siteUrl}/${canonical.replace(/^\//, '')}` : si
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": ["ProfessionalService", "LocalBusiness"],
+      "additionalType": "https://www.wikidata.org/wiki/Q216931",
       "@id": `${siteUrl}/#organization`,
       "name": "One Take Wonder Marketing",
       "url": siteUrl,
       "logo": `${siteUrl}/logo.png`,
       "image": `${siteUrl}/MarketingBanner.jpg`,
-      "description": "Full-service marketing agency with over 10 years of experience helping local businesses grow with customized strategies based on their budget.",
+      "description": "One Take Wonder Marketing is a full-service marketing and media-buying agency in Orlando, Florida, serving local businesses across the United States.",
       "telephone": "+13214838762",
       "email": "pearl@onetakewonderproductions.com",
       "address": {
@@ -91,7 +92,20 @@ const currentUrl = canonical ? `${siteUrl}/${canonical.replace(/^\//, '')}` : si
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Strategy", "description": "Positioning, messaging, and go-to-market strategy." } }
         ]
       },
-      "potentialAction": {
+      "potentialAction": [{
+        "@type": "ScheduleAction",
+        "name": "Book a free marketing proposal call",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${siteUrl}/contact`,
+          "actionPlatform": [
+            "https://schema.org/DesktopWebPlatform",
+            "https://schema.org/MobileWebPlatform"
+          ],
+          "httpMethod": "GET",
+          "contentType": "text/html"
+        }
+      }, {
         "@type": "ContactAction",
         "name": "Contact One Take Wonder Marketing",
         "target": {
@@ -101,7 +115,7 @@ const currentUrl = canonical ? `${siteUrl}/${canonical.replace(/^\//, '')}` : si
           "httpMethod": "GET",
           "contentType": "text/html"
         }
-      }
+      }]
     })} />
 
     <link rel="icon" type="image/png" href="/logo.png" />

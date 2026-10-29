@@ -1,23 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
----
 
-<Layout
-  title="Blog | One Take Wonder Marketing"
-  description="Marketing insights, tips, and strategies from the team at One Take Wonder Marketing. Based in Orlando, Florida."
-  canonical="blog"
->
-  <section class="bg-gray-900 py-20 px-6">
-    <div class="max-w-7xl mx-auto text-center">
-      <p class="text-brand-pink-light font-semibold uppercase tracking-widest text-sm mb-4">Blog</p>
-      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Marketing <span class="bg-gradient-to-r from-brand-pink-light to-brand-pink bg-clip-text text-transparent">Insights</span> & Strategies</h1>
-      <p class="text-gray-300 text-lg max-w-2xl mx-auto">Practical marketing advice, industry trends, and behind-the-scenes perspectives from our team in Orlando, Florida.</p>
-    </div>
-  </section>
+const siteUrl = 'https://onetakewondermarketing.com';
 
-  <section class="py-20 px-6 bg-white">
-    <div class="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
-      {[
+const posts = [
 
         {
           slug: 'streaming-tv-advertising-ctv-ott-for-local-business',
@@ -160,11 +146,52 @@ import Layout from '../layouts/Layout.astro';
           tag: 'Analytics & Reporting',
         },
 
-      ].map((post) => (
+];
+
+// Machine-readable dates for <time datetime> on each card.
+const isoDate = (d) => new Date(d).toISOString().slice(0, 10);
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': `${siteUrl}/blog`,
+  name: 'One Take Wonder Marketing Blog',
+  description: 'Marketing insights, media-buying tips and advertising strategy from One Take Wonder Marketing in Orlando, Florida.',
+  url: `${siteUrl}/blog`,
+  inLanguage: 'en-US',
+  publisher: { '@type': 'Organization', name: 'One Take Wonder Marketing', url: siteUrl },
+  blogPost: posts.map((post) => ({
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    url: `${siteUrl}/blog/${post.slug}`,
+    datePublished: new Date(post.date).toISOString(),
+    articleSection: post.tag,
+  })),
+};
+---
+
+<Layout
+  title="Blog | One Take Wonder Marketing"
+  description="Marketing insights, media-buying tips and advertising strategy from the One Take Wonder Marketing team in Orlando, Florida. Updated regularly."
+  canonical="blog"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+  <section class="bg-gray-900 py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-brand-pink-light font-semibold uppercase tracking-widest text-sm mb-4">Blog</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Marketing <span class="bg-gradient-to-r from-brand-pink-light to-brand-pink bg-clip-text text-transparent">Insights</span> & Strategies</h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">Practical marketing advice, industry trends, and behind-the-scenes perspectives from our team in Orlando, Florida.</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
+      {posts.map((post) => (
         <a href={`/blog/${post.slug}`} class="group block rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-brand-pink/30 hover:shadow-xl">
           <div class="flex flex-wrap items-center gap-3 mb-4">
             <span class="text-brand-pink text-xs font-bold uppercase tracking-wider">{post.tag}</span>
-            <span class="text-gray-400 text-xs">{post.date}</span>
+            <time class="text-gray-400 text-xs" datetime={isoDate(post.date)}>{post.date}</time>
           </div>
           <h2 class="text-2xl font-extrabold text-gray-900 mb-4 transition-colors group-hover:text-brand-pink">{post.title}</h2>
           <p class="text-gray-600 leading-relaxed mb-5">{post.excerpt}</p>

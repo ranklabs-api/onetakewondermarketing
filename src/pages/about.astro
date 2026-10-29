@@ -7,6 +7,7 @@ import Layout from '../layouts/Layout.astro';
   description="Boutique full-service marketing agency founded by Palloma Earl. 10+ years of experience in strategy, media, and creative. Based in Orlando, FL."
   canonical="about"
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "@id": "https://onetakewondermarketing.com/about#faq", "mainEntity": [{"@type": "Question", "name": "Do you only work with businesses in Orlando?", "acceptedAnswer": {"@type": "Answer", "text": "No. We are headquartered in Orlando and know Central Florida well, which helps when a campaign depends on local media and local audiences. But media buying and digital work are not limited by geography, and we run campaigns for clients across the United States. If your market is somewhere we have not bought before, we will say so and do the research before we spend your money in it."}}, {"@type": "Question", "name": "What does “boutique” actually mean for a client?", "acceptedAnswer": {"@type": "Answer", "text": "It means you talk to the person doing the work rather than an account manager relaying messages. It also means we take on a limited number of clients at a time, so there is a real ceiling on how many we can serve well. Practically, it shows up in small things: we do not bill for a phone call, and you are not waiting three days for an answer that takes five minutes."}}, {"@type": "Question", "name": "Do I have to use every service you offer?", "acceptedAnswer": {"@type": "Answer", "text": "Not at all. Most clients start with one or two things — often media buying or paid search — and add others only when there is a reason to. Being full-service means the capability is there when your plan needs it, not that you are sold all of it up front. We would rather run two channels properly than spread a budget across six."}}, {"@type": "Question", "name": "What industries do you have experience in?", "acceptedAnswer": {"@type": "Answer", "text": "Our founder's background spans national advertising in Brazil and then television and media strategy at Univision, CBS and NBC affiliate stations, so broadcast and streaming are home ground. As an agency we work mostly with local and growing businesses across service, retail, hospitality and professional categories. If we are not the right fit for your category, we will tell you rather than learn on your budget."}}, {"@type": "Question", "name": "How do we get started?", "acceptedAnswer": {"@type": "Answer", "text": "A conversation, not a contract. The first call is about understanding your business, what you have already tried and what has and has not worked. From there we put together a free, no-obligation proposal with a recommended approach and a budget. You decide whether it makes sense."}}]})} />
 
 <!-- Page Hero -->
 <section class="bg-gray-900 py-20 px-6">
@@ -101,6 +102,38 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-gray-300 text-lg leading-relaxed">
         Together, we combine decades of experience in strategy, media, creativity, and technology — supported by an extended team of talented specialists — to help businesses grow with confidence through customized marketing solutions built around results, relationships, and long-term success.
       </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="py-20 px-6 bg-gray-50">
+  <div class="max-w-4xl mx-auto">
+    <p class="section-label">Common Questions</p>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-10">Questions We <span class="gradient-text">Hear Often</span></h2>
+
+    <div class="space-y-8">
+      <div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Do you only work with businesses in Orlando?</h3>
+        <p class="text-gray-500 text-lg leading-relaxed">No. We are headquartered in Orlando and know Central Florida well, which helps when a campaign depends on local media and local audiences. But media buying and digital work are not limited by geography, and we run campaigns for clients across the United States. If your market is somewhere we have not bought before, we will say so and do the research before we spend your money in it.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">What does “boutique” actually mean for a client?</h3>
+        <p class="text-gray-500 text-lg leading-relaxed">It means you talk to the person doing the work rather than an account manager relaying messages. It also means we take on a limited number of clients at a time, so there is a real ceiling on how many we can serve well. Practically, it shows up in small things: we do not bill for a phone call, and you are not waiting three days for an answer that takes five minutes.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Do I have to use every service you offer?</h3>
+        <p class="text-gray-500 text-lg leading-relaxed">Not at all. Most clients start with one or two things — often media buying or paid search — and add others only when there is a reason to. Being full-service means the capability is there when your plan needs it, not that you are sold all of it up front. We would rather run two channels properly than spread a budget across six.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">What industries do you have experience in?</h3>
+        <p class="text-gray-500 text-lg leading-relaxed">Our founder's background spans national advertising in Brazil and then television and media strategy at Univision, CBS and NBC affiliate stations, so broadcast and streaming are home ground. As an agency we work mostly with local and growing businesses across service, retail, hospitality and professional categories. If we are not the right fit for your category, we will tell you rather than learn on your budget.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">How do we get started?</h3>
+        <p class="text-gray-500 text-lg leading-relaxed">A conversation, not a contract. The first call is about understanding your business, what you have already tried and what has and has not worked. From there we put together a free, no-obligation proposal with a recommended approach and a budget. You decide whether it makes sense.</p>
+      </div>
     </div>
   </div>
 </section>
