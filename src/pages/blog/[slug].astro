@@ -1400,7 +1400,7 @@ const articleSchema = {
 // underneath is the answer. Where a post has 3+ such headings, publish them as FAQPage
 // so engines can lift the answer directly. Derived from the body, never hand-maintained,
 // so it cannot drift from what the page actually says.
-const QUESTION_HEADING = /^(what|when|where|why|how|who|which|can|do|does|is|are|should|will)\b/i;
+
 
 function extractFaq(md) {
   const out = [];
@@ -1411,8 +1411,7 @@ function extractFaq(md) {
     const heading = trimmed.match(/^(#{2,3})\s+(.*)$/);
     if (heading) {
       const text = heading[2].replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*_`]/g, '').trim();
-      const isQuestion = text.endsWith('?') || QUESTION_HEADING.test(text);
-      current = isQuestion ? { question: text, answer: [] } : null;
+      current = text.endsWith('?') ? { question: text, answer: [] } : null;
       if (current) out.push(current);
       continue;
     }
