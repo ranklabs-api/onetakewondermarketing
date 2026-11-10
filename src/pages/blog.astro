@@ -161,7 +161,7 @@ import Layout from '../layouts/Layout.astro';
         },
 
       ].map((post) => (
-        <a href={`/blog/${post.slug}`} class="group block rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-brand-pink/30 hover:shadow-xl">
+        <a href={`/blog/${post.slug}/`} class="group block rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-brand-pink/30 hover:shadow-xl">
           <div class="flex flex-wrap items-center gap-3 mb-4">
             <span class="text-brand-pink text-xs font-bold uppercase tracking-wider">{post.tag}</span>
             <span class="text-gray-400 text-xs">{post.date}</span>
@@ -178,7 +178,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Want Marketing Insights <span class="bg-gradient-to-r from-brand-pink-light to-brand-pink bg-clip-text text-transparent">Tailored to Your Business?</span></h2>
       <p class="text-gray-300 text-lg mb-10">Every business is different. Let's talk about what would work best for yours.</p>
-      <a href="/contact" class="btn-primary text-lg !px-10 !py-4">Let's chat!</a>
+      <a href="/contact/" class="btn-primary text-lg !px-10 !py-4">Let's chat!</a>
     </div>
   </section>
 </Layout>
